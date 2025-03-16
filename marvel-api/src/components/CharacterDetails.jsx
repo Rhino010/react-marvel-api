@@ -1,12 +1,20 @@
-import { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import {string } from 'prop-types';
 
-const CharacterDetails = ({ selectedCharacter, characters}) => {
-    const [details, setDetails] = useState(false);
-    const [selectedCharacter, setSelectedCharacter] = useState([null]);
+const CharacterDetails = ({details}) => {
+    
+    return (
+       <div className="character-details">
+            <h2>{details.name}</h2>
+            <p>{details.description || 'No description available'}</p>
 
-
-
+       </div>
+    );
 
 }
+
+CharacterDetails.propTypes = {
+    details: string
+}
+
+
 export default CharacterDetails;
